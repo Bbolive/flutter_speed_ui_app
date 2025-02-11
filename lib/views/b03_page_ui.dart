@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class A02PageUi extends StatefulWidget {
-  const A02PageUi({super.key});
+class B03PageUi extends StatefulWidget {
+  const B03PageUi({super.key});
 
   @override
-  State<A02PageUi> createState() => _A02PageUiState();
+  State<B03PageUi> createState() => _B03PageUiState();
 }
 
-class _A02PageUiState extends State<A02PageUi> {
+class _B03PageUiState extends State<B03PageUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class _A02PageUiState extends State<A02PageUi> {
           child: Column(
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.035,
+                height: MediaQuery.of(context).size.height * 0.06,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,  // จัดข้อความให้อยู่กึ่งกลางตามแนวตั้ง
@@ -29,60 +29,55 @@ class _A02PageUiState extends State<A02PageUi> {
                 Align(
                   alignment: Alignment.center,  // จัดข้อความแรกให้อยู่กลาง
                   child: Text(
-                   'Welcome Back',
-                    style: TextStyle(
-                      fontSize: 30, 
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black),
+                   'Create Account',
+                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: const Color.fromARGB(255, 10, 51, 173),),
+                    ),
+                  ),
+                  SizedBox(height:MediaQuery.of(context).size.height * 0.005,),  // ระยะห่างระหว่างบรรทัด
+                  Align(
+                    alignment: Alignment.center,  // จัดข้อความที่สองไปทางซ้าย
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 0), // ขยับข้อความ "Word" ไปทางขวา
+                      child: Text(
+                        'Create on account so you can explore all the',
+                        style: TextStyle(fontSize: 14, color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height:MediaQuery.of(context).size.height * 0.005,),  // ระยะห่างระหว่างบรรทัด
+                  Align(
+                    alignment: Alignment.center,  // จัดข้อความที่สองไปทางซ้าย
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 0), // ขยับข้อความ "Word" ไปทางขวา
+                      child: Text(
+                        'existing jobs',
+                        style: TextStyle(fontSize: 14, color: Colors.black),
+                      ),
                     ),
                   ),
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.025,
+                height: MediaQuery.of(context).size.height * 0.05,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,  
-                children: [
-                Align(
-                  alignment: Alignment.center, 
-                  child: Text(
-                   'Lorem ipsum dolor sit amet, consectetur adipiscing',
-                   style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black,
+              TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: const Color.fromARGB(255, 10, 51, 173),
+                    ),
                   ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: const Color.fromARGB(255, 10, 51, 173),
+                    ),
+                  ),
+                  hintText: 'E-Mail ',
+                  hintStyle: TextStyle(
+                    color: Colors.grey[600],
                   ),
                 ),
-                  SizedBox(height:MediaQuery.of(context).size.height * 0.005,),  
-                  Align(
-                    alignment: Alignment.center,  
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 0),
-                      child: Text(
-                        'elit. Diam maecenas mi non sed ut odio. Non,justo,',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height:MediaQuery.of(context).size.height * 0.005,),  
-                  Align(
-                    alignment: Alignment.center,  
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 0),
-                      child: Text(
-                        'sed facilisi et',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.035,
@@ -100,56 +95,45 @@ class _A02PageUiState extends State<A02PageUi> {
                       color: Color.fromARGB(255, 110, 109, 109),
                     ),
                   ),
-                  hintText: 'Username, E-Mail & Phone Number',
+                  hintText: 'Password',
                   hintStyle: TextStyle(
-                    fontSize: 14,
                     color: Colors.grey[600],
                   ),
                 ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.02,
+                height: MediaQuery.of(context).size.height * 0.035,
               ),
               TextField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color.fromARGB(255, 110, 109, 109),
+                      color: const Color.fromARGB(255, 10, 51, 173),
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color.fromARGB(255, 110, 109, 109),
-                   ),
+                      color: const Color.fromARGB(255, 10, 51, 173),
+                    ),
                   ),
-                  hintText: 'Password',
+                  hintText: 'Confirm Password',
                   hintStyle: TextStyle(
-                    fontSize: 14,
                     color: Colors.grey[600],
                   ),
                 ),
               ),
-               Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Forgot Password?",
-                    style: TextStyle(
-                      color: const Color.fromARGB(255, 69, 68, 68),
-                    ),
-                  ),
-                ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.035,
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.015,
+                height: MediaQuery.of(context).size.height * 0.05,
               ),
               ElevatedButton(
                 onPressed: () {},
                 // ignore: sort_child_properties_last
                 child: Text(
-                  "Sing in",
+                  "Sing up",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
@@ -160,7 +144,7 @@ class _A02PageUiState extends State<A02PageUi> {
                     MediaQuery.of(context).size.width,
                     50.0,
                   ),
-                  backgroundColor: const Color.fromARGB(255, 255, 125, 229),
+                  backgroundColor: const Color.fromARGB(255, 10, 51, 173),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
                       7.0,
@@ -169,13 +153,38 @@ class _A02PageUiState extends State<A02PageUi> {
                 ),
               ),
                SizedBox(
-                height: MediaQuery.of(context).size.height * 0.035,
+                height: MediaQuery.of(context).size.height * 0.015,
               ),
-              Text(
-                "Or Sing up With",
+              Align(
+                alignment: Alignment.center,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => B03PageUi(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    "Already have an account",
+                    style: TextStyle(
+                      color:Colors.grey[600], 
+                    ),
+                  ),
+                ),
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.035,
+                height: MediaQuery.of(context).size.height * 0.05,
+              ),
+              Text(
+                "Or Continue With",
+                style: TextStyle(
+                      color: const Color.fromARGB(255, 10, 51, 173),
+                    ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.015,
               ),
               Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -218,7 +227,8 @@ class _A02PageUiState extends State<A02PageUi> {
                   // ignore: sort_child_properties_last
                   child: Center(
                     child: Image.asset(
-                  'assets/images/imga4.png', 
+                  'assets/images/imga4.png',
+                  color: Colors.black, 
                 ),
               ),
               ),

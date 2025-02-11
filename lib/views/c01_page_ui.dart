@@ -10,6 +10,24 @@ class C01PageUi extends StatefulWidget {
 class _C01PageUiState extends State<C01PageUi> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Stack(
+        fit: StackFit.expand,
+            children: [
+               Image.asset(
+                  'assets/images/imgc1.png',
+                  fit: BoxFit.cover,
+                ),
+              Center(
+                child: Image.asset(
+                  'assets/images/imgc2.png',
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.5,
+              ),
+            ],
+        ),
+    );
   }
 }
