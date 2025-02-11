@@ -10,6 +10,94 @@ class D06PageUi extends StatefulWidget {
 class _D06PageUiState extends State<D06PageUi> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Padding(
+        padding: EdgeInsets.only(
+          left: 35.0,
+          right: 35.0,
+        ),
+        child: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.3,
+              ),
+                Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  'assets/images/imgd3.png',
+                  fit: BoxFit.cover,
+                  width: MediaQuery.of(context).size.width * 0.3,
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  'Password Changed!',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  'You password has been changed',
+                  style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.height * 0.017,
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Text(
+                  'successfully.',
+                  style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.height * 0.017,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                OutlinedButton(
+                  onPressed: () {},
+                  
+                  // ignore: sort_child_properties_last
+                  child: Text(
+                    'Back to Login',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  style: OutlinedButton.styleFrom(
+                    fixedSize: Size(
+                      250.0,
+                      50.0,
+                    ),
+                    backgroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(
+                        5.0,
+                      ),
+                    ),
+                  ),
+                ),
+            ],
+          ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

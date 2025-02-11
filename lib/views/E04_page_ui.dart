@@ -269,6 +269,25 @@ class _E04PageUiState extends State<E04PageUi> {
               ),
               ],
               ),
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => E04PageUi(),
+                      ),
+                    );
+                    },
+                    child: Text(
+                      "Create Account",
+                      style: TextStyle(
+                        color: const Color.fromARGB(255, 10, 51, 173),
+                      ),
+                    ),
+                  ),
+                ),
                 ],
               ),
             ],

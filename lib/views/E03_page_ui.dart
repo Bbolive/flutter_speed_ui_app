@@ -1,4 +1,5 @@
-// ignore: file_names
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_ui_app/views/E04_page_ui.dart';
 import 'package:flutter_speed_ui_app/views/E05_page_ui.dart';

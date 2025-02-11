@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_ui_app/views/c02_page_ui.dart';
 
 class C01PageUi extends StatefulWidget {
   const C01PageUi({super.key});
@@ -18,10 +19,24 @@ class _C01PageUiState extends State<C01PageUi> {
                   'assets/images/imgc1.png',
                   fit: BoxFit.cover,
                 ),
-              Center(
-                child: Image.asset(
-                  'assets/images/imgc2.png',
+              OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => C02PageUi(),
+                      ),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                    shape: CircleBorder(),
+                  ),
+                  // ignore: sort_child_properties_last
+                  child: Center(
+                    child: Image.asset(
+                  'assets/images/imgc2.png', 
                 ),
+              ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.5,

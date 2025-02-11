@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_ui_app/views/b02_page_ui.dart';
+import 'package:flutter_speed_ui_app/views/b03_page_ui.dart';
 
 class B01PageUi extends StatefulWidget {
   const B01PageUi({super.key});
@@ -138,7 +139,15 @@ class _B01PageUiState extends State<B01PageUi> {
                 height: MediaQuery.of(context).size.height * 0.06,
               ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    //เปิดหน้าจอแบบย้อนกลับได้
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => B03PageUi(),
+                      ),
+                    );
+                  },
                   // ignore: sort_child_properties_last
                   child: Text(
                     'Register',
