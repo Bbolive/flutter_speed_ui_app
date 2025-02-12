@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_ui_app/views/b02_page_ui.dart';
 
 class B03PageUi extends StatefulWidget {
   const B03PageUi({super.key});
@@ -130,7 +131,15 @@ class _B03PageUiState extends State<B03PageUi> {
                 height: MediaQuery.of(context).size.height * 0.05,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => B02PageUi(),
+                      ),
+                    );
+                  
+                },
                 // ignore: sort_child_properties_last
                 child: Text(
                   "Sing up",
@@ -158,14 +167,7 @@ class _B03PageUiState extends State<B03PageUi> {
               Align(
                 alignment: Alignment.center,
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => B03PageUi(),
-                      ),
-                    );
-                  },
+                  onPressed: () {},
                   child: Text(
                     "Already have an account",
                     style: TextStyle(

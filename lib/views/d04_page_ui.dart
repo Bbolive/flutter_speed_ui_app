@@ -124,6 +124,7 @@ class _D04PageUiState extends State<D04PageUi> {
                         ),
                       );
                     },
+                    // ignore: sort_child_properties_last
                     child: Text(
                       'Verify',
                       style: TextStyle(

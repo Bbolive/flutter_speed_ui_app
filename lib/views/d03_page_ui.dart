@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_ui_app/views/d02_page_ui.dart';
 import 'package:flutter_speed_ui_app/views/d04_page_ui.dart';
 
 class D03PageUi extends StatefulWidget {
@@ -156,7 +157,7 @@ class _D03PageUiState extends State<D03PageUi> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                            builder: (context) => D04PageUi(),
+                            builder: (context) => D02PageUi(),
                           ),
                         );
                       },

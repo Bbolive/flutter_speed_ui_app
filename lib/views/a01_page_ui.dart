@@ -15,28 +15,49 @@ class _A01PageUiState extends State<A01PageUi> {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          // ภาพพื้นหลังเต็มความกว้าง
+          // พื้นหลังสีชมพู
           Positioned(
-            top: 20,
-            left: 20,
-            right: 20,
-            child: SizedBox(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.35,
-              child: Image.asset(
-                'assets/images/imga1.png',
-                fit: BoxFit.cover,
-              
+            top: 10,
+            left: 10,
+            right: 10,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(30), // โค้งมนที่มุมซ้ายล่าง
+                bottomRight: Radius.circular(30), // โค้งมนที่มุมขวาล่าง
+              ),
+              child: Container(
+                color: const Color.fromARGB(255, 255, 125, 229), // พื้นหลังสีชมพู
+                height: MediaQuery.of(context).size.height * 0.5, // ปรับความสูงของพื้นหลัง
               ),
             ),
           ),
 
+          // ภาพที่มีความโค้งมนที่ด้านล่าง
+          Positioned(
+            top: 20,
+            left: 20,
+            right: 20,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(30), // โค้งมนที่มุมซ้ายล่าง
+                bottomRight: Radius.circular(30), // โค้งมนที่มุมขวาล่าง
+              ),
+              child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height * 0.45, // ปรับความสูงของภาพ
+                child: Image.asset(
+                  'assets/images/imga1.png', // ใช้ภาพของคุณที่นี่
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 35.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const SizedBox(height: 250), // ระยะห่างจากรูปภาพ
+                const SizedBox(height: 350), // ระยะห่างจากภาพ
 
                 // หัวข้อ
                 Column(
@@ -85,10 +106,10 @@ class _A01PageUiState extends State<A01PageUi> {
                 // กล่องปุ่ม
                 Container(
                   width: double.infinity,
-                  height: 50,
+                  height: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(9),
-                    color: Colors.grey[300], // พื้นหลังของกล่อง
+                    color: Colors.white, // พื้นหลังของกล่อง
                   ),
                   child: Row(
                     children: [
@@ -102,6 +123,10 @@ class _A01PageUiState extends State<A01PageUi> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
+                            fixedSize: Size(
+                              MediaQuery.of(context).size.width,
+                              50.0,
+                            ),
                             backgroundColor: const Color.fromARGB(255, 255, 125, 229),
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
@@ -122,6 +147,10 @@ class _A01PageUiState extends State<A01PageUi> {
                         child: ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
+                            fixedSize: Size(
+                              MediaQuery.of(context).size.width,
+                              50.0,
+                            ),
                             backgroundColor: Colors.grey,
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(

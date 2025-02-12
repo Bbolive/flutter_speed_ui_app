@@ -109,7 +109,7 @@ class _B01PageUiState extends State<B01PageUi> {
                   height: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(9),
-                    color: Colors.grey[300], // พื้นหลังของกล่อง
+                    color: Colors.white, // พื้นหลังของกล่อง
                   ),
                   child: Row(
                     children: [
@@ -123,6 +123,10 @@ class _B01PageUiState extends State<B01PageUi> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
+                            fixedSize: Size(
+                              MediaQuery.of(context).size.width,
+                              50.0,
+                            ),
                             backgroundColor: const Color.fromARGB(255, 10, 51, 173),
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
@@ -130,7 +134,6 @@ class _B01PageUiState extends State<B01PageUi> {
                                 bottomLeft: Radius.circular(9),
                               ),
                             ),
-                            fixedSize: Size(30, 30)
                           ),
                           child: const Text(
                             'Login',
@@ -149,6 +152,10 @@ class _B01PageUiState extends State<B01PageUi> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
+                            fixedSize: Size(
+                              MediaQuery.of(context).size.width,
+                              50.0,
+                            ),
                             backgroundColor: Colors.white,
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.only(
@@ -157,7 +164,6 @@ class _B01PageUiState extends State<B01PageUi> {
                           
                               ),
                             ),
-                            fixedSize: Size(30, 30)
                           ),
                           child: const Text(
                             'Register',

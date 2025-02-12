@@ -141,7 +141,7 @@ class _C02PageUiState extends State<C02PageUi> {
                   
                   // ignore: sort_child_properties_last
                   child: Text(
-                    'Sing in',
+                    'SING IN',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -166,7 +166,7 @@ class _C02PageUiState extends State<C02PageUi> {
                 height: MediaQuery.of(context).size.height * 0.045,
               ),
               Text(
-                "Or Sing up With",
+                "Or Sing in With",
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.045,
@@ -210,7 +210,7 @@ class _C02PageUiState extends State<C02PageUi> {
         ),
       ),
       SizedBox(
-        width: MediaQuery.of(context).size.width * 0.035,
+        width: MediaQuery.of(context).size.width * 0.045,
       ),
       OutlinedButton(
         onPressed: () {},
@@ -231,13 +231,13 @@ class _C02PageUiState extends State<C02PageUi> {
     ],
   ),
               SizedBox(
-                width: MediaQuery.of(context).size.width* 0.065,
+                height: MediaQuery.of(context).size.height* 0.035,
               ),
               RichText(
                 text: TextSpan(
                   children: [
                     TextSpan(
-                      text: "Have an account? ",
+                      text: "Don't have an account? ",
                       style: TextStyle(
                         color: Colors.black, 
                         fontSize: 16,

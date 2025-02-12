@@ -170,7 +170,7 @@ class _D02PageUiState extends State<D02PageUi> {
                 height: MediaQuery.of(context).size.height * 0.025,
               ),
               Text(
-                "Or Register with",
+                "Or Login with",
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.025,
@@ -241,6 +241,7 @@ class _D02PageUiState extends State<D02PageUi> {
     text: TextSpan(
       children: [
         TextSpan(
+          // ignore: unnecessary_string_escapes
           text: "Don\'t have an account?",
           style: TextStyle(
             color: Colors.black,

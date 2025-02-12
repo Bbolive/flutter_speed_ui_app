@@ -61,6 +61,7 @@ class _D06PageUiState extends State<D06PageUi> {
                   'successfully.',
                   style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.017,
+                    color: Colors.grey,
                   ),
                 ),
               ),

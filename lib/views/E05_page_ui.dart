@@ -48,23 +48,26 @@ class _E05PageUiState extends State<E05PageUi> {
                 height: MediaQuery.of(context).size.height * 0.025,
               ),
               Align(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 250, 203, 132), // สีพื้นหลังกรอบ
-                    borderRadius: BorderRadius.circular(12), // กรอบมน ๆ
-                  ),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      size: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                  ),
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),  // ระยะห่างจากขอบ
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 225, 222, 218), // สีพื้นหลังกรอบ
+                  shape: BoxShape.circle, // เปลี่ยนกรอบเป็นวงกลม
+                ),
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);  // ทำให้ปุ่มย้อนกลับทำงาน
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  size: MediaQuery.of(context).size.height * 0.025,  // ขนาดไอคอน
                 ),
               ),
+            ),
+          ),
+          ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.025,
               ),
@@ -175,6 +178,7 @@ class _E05PageUiState extends State<E05PageUi> {
                         ),
                       );
                     },
+                    // ignore: sort_child_properties_last
                     child: Text(
                       'Verify',
                       style: TextStyle(

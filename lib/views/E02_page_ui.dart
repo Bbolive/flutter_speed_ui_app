@@ -13,108 +13,120 @@ class E02PageUi extends StatefulWidget {
 
 class _E02PageUiState extends State<E02PageUi> {
   bool isTip = false;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Positioned(
-            top: 20,
-            left: 20,
-            right: 20,
-            child: SizedBox(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height * 0.35,
-              child: Image.asset(
-                'assets/images/imge2.png',
-                fit: BoxFit.cover,
-              
-              ),
+          // ภาพเต็มจอ
+          Container(
+            width: MediaQuery.of(context).size.width, // กว้างเต็มหน้าจอ
+            height: MediaQuery.of(context).size.height * 0.4, // ความสูงของภาพ
+            child: Image.asset(
+              'assets/images/imge2.png',
+              fit: BoxFit.cover,  // ให้ภาพขยายเต็มพื้นที่
             ),
           ),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 35.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(height: 250), 
-
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.025,
+          // ปุ่มย้อนกลับที่มุมซ้ายบน
+          Align(
+            alignment: Alignment.topLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),  // ระยะห่างจากขอบ
+              child: Container(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 225, 222, 218), // สีพื้นหลังกรอบ
+                  shape: BoxShape.circle, // เปลี่ยนกรอบเป็นวงกลม
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,  // จัดข้อความให้อยู่กึ่งกลางตามแนวตั้ง
-                  children: [
+              child: IconButton(
+                onPressed: () {
+                  Navigator.pop(context);  // ทำให้ปุ่มย้อนกลับทำงาน
+                },
+                icon: Icon(
+                  Icons.arrow_back_ios,
+                  size: MediaQuery.of(context).size.height * 0.025,  // ขนาดไอคอน
+                ),
+              ),
+            ),
+          ),
+          ),
+          // เนื้อหาด้านล่างของภาพ (ข้อความและ TextField อยู่ด้านล่าง)
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.4,  // ตั้งค่าให้เริ่มจากด้านล่างของภาพ
+            left: 0,
+            right: 0,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 35.0),  // กำหนด Padding ด้านซ้ายและขวา
+              child: Column(
+                children: [
                   Align(
-                    alignment: Alignment.center,  // จัดข้อความแรกให้อยู่กลาง
+                    alignment: Alignment.center,
                     child: Text(
-                     'Welcome Back',
+                      'Welcome back',
                       style: TextStyle(
                         fontSize: 30, 
                         fontWeight: FontWeight.bold,
-                        color: Colors.black),
+                        color: Colors.black,
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,  
-                  children: [
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0,
+                  ),
                   Align(
-                    alignment: Alignment.center, 
+                    alignment: Alignment.center,
                     child: Text(
-                     'Login to your account',
-                     style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black,
+                      'Login to your account',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.025,
+                  ),
+                  // TextField 1
+                  TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: const Color.fromARGB(255, 230, 154, 41),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: const Color.fromARGB(255, 230, 154, 41),
+                        ),
+                      ),
+                      hintText: 'Enter email or phone',
+                      hintStyle: TextStyle(
+                      color: Colors.grey[600],
                     ),
                     ),
                   ),
                   SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
-                ),
-                  TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey,
-                      ),
-                    ),
-                    hintText: 'Email ',
-                    hintStyle: TextStyle(
-                      color: Colors.grey[600],
-                    ),
+                    height: MediaQuery.of(context).size.height * 0.015,
                   ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
-                ),
-                TextField(
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey,
+                  // TextField 1
+                  TextField(
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: const Color.fromARGB(255, 230, 154, 41),
+                        ),
                       ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey,
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: const Color.fromARGB(255, 230, 154, 41),
+                        ),
                       ),
-                    ),
-                    hintText: 'Password',
-                    hintStyle: TextStyle(
+                      hintText: 'Password ',
+                      hintStyle: TextStyle(
                       color: Colors.grey[600],
                     ),
                     isCollapsed: false,
@@ -128,89 +140,98 @@ class _E02PageUiState extends State<E02PageUi> {
                     ),
                   ),
                 ),
-                
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.005,
                 ),
                  Row(
-  mainAxisAlignment: MainAxisAlignment.spaceBetween, // ให้ข้อความอยู่สุดขอบซ้ายและขวา
-  children: [
-    Row(
-      children: [
-        Checkbox(
-          onChanged: (paramValue) {
-            setState(() {
-              isTip = paramValue!;
-            });
-          },
-          value: isTip,
-          activeColor: Colors.grey,
-          checkColor: Colors.white,
-          focusColor: Colors.grey,
-          side: BorderSide(
-            color: Colors.grey,
-          ),
-        ),
-        Text(
-          'Remember me',
-        ),
-      ],
-    ),
-    TextButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => E03PageUi(),
-          ),
-        );
-      },
-      child: Text(
-        "Forgot Password?",
-        style: TextStyle(
-          color: const Color.fromARGB(255, 230, 154, 41),
-        ),
-      ),
-    ),
-  ],
-),
-                Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton(
-                  onPressed: () {},
-                  
-                  // ignore: sort_child_properties_last
-                  child: Text(
-                    'Sing in',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // ให้ข้อความอยู่สุดขอบซ้ายและขวา
+                  children: [
+                    Row(
+                    children: [
+                      Checkbox(
+                        onChanged: (paramValue) {
+                          setState(() {
+                            isTip = paramValue!;
+                          });
+                        },
+                        value: isTip,
+                        activeColor: Colors.grey,
+                        checkColor: Colors.white,
+                        focusColor: Colors.grey,
+                        side: BorderSide(
+                          color: Colors.grey,
+                        ),
+                      ),
+                    Text(
+                      'Remember me',
+                    ) ,
+                  ],
+                ),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => E03PageUi(),
                     ),
+                  );
+                },
+                child: Text(
+                  "Forgot Password?",
+                  style: TextStyle(
+                    color: const Color.fromARGB(255, 230, 154, 41),
                   ),
-                  style: OutlinedButton.styleFrom(
-                    fixedSize: Size(
-                      250.0,
-                      50.0,
-                    ),
-                    backgroundColor: const Color.fromARGB(255, 230, 154, 41),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        5.0,
+                ),
+              ),
+            ],
+          ),
+
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.025,
+                  ),
+                  // Submit button
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      OutlinedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                        ),
+                        style: OutlinedButton.styleFrom(
+                          fixedSize: Size(
+                            250.0,
+                            50.0,
+                          ),
+                          backgroundColor: const Color.fromARGB(255, 230, 154, 41),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                              5.0,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                height: MediaQuery.of(context).size.height * 0.015,
+              ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      'OR',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.black,
                       ),
                     ),
                   ),
-                ),
-            ],
-          ),
-           SizedBox(
-                height: MediaQuery.of(context).size.height * 0.035,
-              ),
-              Text(
-                "OR",
-              ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.035,
+                  SizedBox(
+                height: MediaQuery.of(context).size.height * 0.015,
               ),
               Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -219,17 +240,16 @@ class _E02PageUiState extends State<E02PageUi> {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                     shape: CircleBorder(),
-                    iconColor: Colors.white
                   ),
                   // ignore: sort_child_properties_last
                   child: Center(
                     child: Image.asset(
-                  'assets/images/imga3.png',
+                  'assets/images/imga2.png',
                 ),
               ),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width* 0.002,
+                width: MediaQuery.of(context).size.width* 0.025,
               ),
               OutlinedButton(
                   onPressed: () {},
@@ -239,7 +259,7 @@ class _E02PageUiState extends State<E02PageUi> {
                   // ignore: sort_child_properties_last
                   child: Center(
                     child: Image.asset(
-                  'assets/images/imga2.png',
+                  'assets/images/imga3.png',
                 ),
               ),
               ),
@@ -260,48 +280,49 @@ class _E02PageUiState extends State<E02PageUi> {
               ),
               ],
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.035,
-              ),
-                 RichText(
-    text: TextSpan(
-      children: [
-        TextSpan(
-          text: "Don\'t have an account?",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 16,
-          ),
-        ),
-        WidgetSpan(
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => E04PageUi(),
-                ),
-              );
-            },
-            child: Text(
-              "  Create Account",
-              style: TextStyle(
-                color: const Color.fromARGB(255, 230, 154, 41),
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.underline, // ขีดเส้นใต้เหมือนลิงก์
+                  // เพิ่ม RichText ที่ด้านล่างสุด
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.025,
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Don't have an Account",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                          ),
+                        ),
+                        WidgetSpan(
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => E04PageUi(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              " Create Account",
+                              style: TextStyle(
+                                color: const Color.fromARGB(255, 230, 154, 41),
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                decoration: TextDecoration.underline, // ขีดเส้นใต้เหมือนลิงก์
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  
+                ],
               ),
             ),
           ),
-        ),
-      ],
-      ),
-      ),
-                ],
-              ),
-            ],
-          ),
-                ),
         ],
       ),
     );
