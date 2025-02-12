@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_ui_app/views/d03_page_ui.dart';
+import 'package:flutter_speed_ui_app/views/d07_page_ui.dart';
 
 class D02PageUi extends StatefulWidget {
   const D02PageUi({super.key});
@@ -26,13 +27,19 @@ class _D02PageUiState extends State<D02PageUi> {
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    size: MediaQuery.of(context).size.height * 0.045,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200], // สีพื้นหลังกรอบ
+                    borderRadius: BorderRadius.circular(12), // กรอบมน ๆ
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: MediaQuery.of(context).size.height * 0.025,
+                    ),
                   ),
                 ),
               ),
@@ -60,12 +67,12 @@ class _D02PageUiState extends State<D02PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Enter your email',
@@ -82,12 +89,12 @@ class _D02PageUiState extends State<D02PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Enter your password',
@@ -122,7 +129,7 @@ class _D02PageUiState extends State<D02PageUi> {
                     child: Text(
                       "Forgot Your Password?",
                       style: TextStyle(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                   ),
@@ -149,7 +156,7 @@ class _D02PageUiState extends State<D02PageUi> {
                       250.0,
                       50.0,
                     ),
-                    backgroundColor: const Color.fromARGB(255, 230, 154, 41),
+                    backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                         5.0,
@@ -165,76 +172,109 @@ class _D02PageUiState extends State<D02PageUi> {
               Text(
                 "Or Register with",
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.025,
+              ),
               Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
-                    child: Image.asset(
-                  'assets/images/imga2.png',
-                ),
-              ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width* 0.035,
-              ),
-              OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
-                    child: Image.asset(
-                  'assets/images/imga3.png',
-                ),
-              ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width* 0.002,
-              ),
-              OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
-                    child: Image.asset(
-                  'assets/images/imga4.png', 
-                ),
-              ),
-              ),
-              ],
-              ),
-              Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => D03PageUi(),
-                      ),
-                    );
-                    },
-                    child: Text(
-                      "Login Now",
-                      style: TextStyle(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OutlinedButton(
+                    onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.grey), // กำหนดสีกรอบ
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12), // กำหนดความมนของมุม
                       ),
                     ),
-                  ),
-                ),
-                ],
-              ),
+                  child: Center(
+                child: Image.asset(
+              'assets/images/imgc4.png',
+              height: 30,
+              width: 30,
+            ),
           ),
         ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.035,
+        ),
+        OutlinedButton(
+          onPressed: () {},
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(color: Colors.grey), // กำหนดสีกรอบ
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12), // กำหนดความมนของมุม
+            ),
+          ),
+          child: Center(
+            child: Image.asset(
+            'assets/images/imga2.png',
+            height: 30,
+            width: 30,
+          ),
+        ),
+      ),
+      SizedBox(
+        width: MediaQuery.of(context).size.width * 0.035,
+      ),
+      OutlinedButton(
+        onPressed: () {},
+        style: OutlinedButton.styleFrom(
+          side: BorderSide(color: Colors.grey), // กำหนดสีกรอบ
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12), // กำหนดความมนของมุม
+          ),
+        ),
+        child: Center(
+          child: Image.asset(
+            'assets/images/imga4.png',
+            height: 30,
+            width: 30,
+          ),
+        ),
+      ),
+    ],
+  ),
+  SizedBox(
+    height: MediaQuery.of(context).size.height * 0.025,
+  ),
+  RichText(
+    text: TextSpan(
+      children: [
+        TextSpan(
+          text: "Don\'t have an account?",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
+        ),
+        WidgetSpan(
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => D07PageUi(),
+                ),
+              );
+            },
+            child: Text(
+              "  Register New",
+              style: TextStyle(
+                color: const Color.fromARGB(255, 34, 162, 173),
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.underline, // ขีดเส้นใต้เหมือนลิงก์
+              ),
+            ),
+          ),
+        ),
+      ],
+      ),
+      ),
+      ],
+      ),
+      ),
+      ),
     );
   }
 }

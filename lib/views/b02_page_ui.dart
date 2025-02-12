@@ -192,7 +192,7 @@ class _B02PageUiState extends State<B02PageUi> {
                   // ignore: sort_child_properties_last
                   child: Center(
                     child: Image.asset(
-                  'assets/images/imga3.png',
+                  'assets/images/imga2.png',
                 ),
               ),
               ),
@@ -207,7 +207,7 @@ class _B02PageUiState extends State<B02PageUi> {
                   // ignore: sort_child_properties_last
                   child: Center(
                     child: Image.asset(
-                  'assets/images/imga2.png',
+                  'assets/images/imga3.png',
                 ),
               ),
               ),

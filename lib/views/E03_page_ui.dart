@@ -32,6 +32,24 @@ class _E03PageUiState extends State<E03PageUi> {
                   height: MediaQuery.of(context).size.height * 0.005,
                 ),
                 Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200], // สีพื้นหลังกรอบ
+                    borderRadius: BorderRadius.circular(12), // กรอบมน ๆ
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: MediaQuery.of(context).size.height * 0.025,
+                    ),
+                  ),
+                ),
+              ),
+                Align(
                   alignment: Alignment.center,
                   child: Image.asset(
                     'assets/images/imge2.png',
@@ -80,12 +98,12 @@ class _E03PageUiState extends State<E03PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                   ),
@@ -131,27 +149,42 @@ class _E03PageUiState extends State<E03PageUi> {
           ],
         ), 
         SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height * 0.25,
                 ),
-                 Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => E04PageUi(),
-                      ),
-                    );
-                    },
-                    child: Text(
-                      "Create Account",
-                      style: TextStyle(
-                        color: const Color.fromARGB(255, 10, 51, 173),
-                      ),
-                    ),
-                  ),
+                 RichText(
+    text: TextSpan(
+      children: [
+        TextSpan(
+          text: "Don\'t have an account?",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
+        ),
+        WidgetSpan(
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => E04PageUi(),
                 ),
+              );
+            },
+            child: Text(
+              "  Create Account",
+              style: TextStyle(
+                color: const Color.fromARGB(255, 230, 154, 41),
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.underline, // ขีดเส้นใต้เหมือนลิงก์
+              ),
+            ),
+          ),
+        ),
+      ],
+      ),
+      ),
                 ],
               ),
         ),

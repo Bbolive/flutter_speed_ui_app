@@ -55,7 +55,7 @@ class _E06PageUiState extends State<E06PageUi> {
                   ],
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.015,
+                  height: MediaQuery.of(context).size.height * 0,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,  
@@ -78,12 +78,12 @@ class _E06PageUiState extends State<E06PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: const Color.fromARGB(255, 230, 154, 41),
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: const Color.fromARGB(255, 230, 154, 41),
                       ),
                     ),
                     hintText: 'Enter New password',
@@ -100,12 +100,12 @@ class _E06PageUiState extends State<E06PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Comfirm password',

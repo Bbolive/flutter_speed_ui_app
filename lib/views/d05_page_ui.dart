@@ -26,13 +26,19 @@ class _D05PageUiState extends State<D05PageUi> {
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    size: MediaQuery.of(context).size.height * 0.045,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200], // สีพื้นหลังกรอบ
+                    borderRadius: BorderRadius.circular(12), // กรอบมน ๆ
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: MediaQuery.of(context).size.height * 0.025,
+                    ),
                   ),
                 ),
               ),
@@ -63,7 +69,7 @@ class _D05PageUiState extends State<D05PageUi> {
                       "Your new password must be unique from those\npreviously used.",
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.black,
+                        color: Colors.grey,
                       ),
                     ),
                   ),
@@ -76,12 +82,12 @@ class _D05PageUiState extends State<D05PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'New Password',
@@ -98,12 +104,12 @@ class _D05PageUiState extends State<D05PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Confirm Password',

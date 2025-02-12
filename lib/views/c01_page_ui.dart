@@ -14,13 +14,17 @@ class _C01PageUiState extends State<C01PageUi> {
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
-            children: [
-               Image.asset(
-                  'assets/images/imgc1.png',
-                  fit: BoxFit.cover,
-                ),
-              OutlinedButton(
-                  onPressed: () {
+        children: [
+          Image.asset(
+            'assets/images/imgc1.png', 
+            fit: BoxFit.cover,
+          ),
+          Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                GestureDetector(
+                  onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -28,21 +32,65 @@ class _C01PageUiState extends State<C01PageUi> {
                       ),
                     );
                   },
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
+                  child: ClipOval( 
                     child: Image.asset(
-                  'assets/images/imgc2.png', 
+                      'assets/images/imgc2.png', 
+                      width: 120, 
+                      height: 120,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+
+                SizedBox(height: 20), 
+                Text(
+                  'HOPE FOR',
+                  style: TextStyle(
+                    fontSize: 40,
+                    color: Colors.white, 
+                  ),
+                ),
+                SizedBox(height: 0), 
+                Text(
+                  'HUMANITY',
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white, 
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter, // จัดข้อความไว้กลางล่างจอ
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 200), // ปรับระยะห่างจากขอบจอ
+              child: Text(
+                'Welcome to',
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: const Color.fromARGB(255, 8, 104, 18),
                 ),
               ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter, 
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 150), 
+              child: Text(
+                'hope for humanity',
+                style: TextStyle(
+                fontSize: 30, 
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(255, 8, 104, 18)),
+                ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.5,
-              ),
-            ],
-        ),
+            ),
+        ],
+      ),
     );
   }
 }

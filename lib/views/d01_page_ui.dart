@@ -26,10 +26,13 @@ class _D01PageUiState extends State<D01PageUi> {
           // ใช้ Align เพื่อปรับตำแหน่งรูปภาพ
           Align(
             alignment: Alignment.center, // ปรับตำแหน่งตรงกลาง
-            child: Image.asset(
+            child: Transform.translate(
+              offset:Offset(0, 70), 
+              child : Image.asset(
               "assets/images/imgd2.png",
-              height: 100,
-              width: 100,
+              height: 500,
+              width: 500,
+              ),
             ),
           ),
 
@@ -50,9 +53,8 @@ class _D01PageUiState extends State<D01PageUi> {
                   },
                   // ignore: sort_child_properties_last
                   child: Text(
-                    'Sign in',
+                    'Login',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
@@ -61,7 +63,7 @@ class _D01PageUiState extends State<D01PageUi> {
                       250.0,
                       50.0,
                     ),
-                    backgroundColor: const Color.fromARGB(255, 16, 198, 16),
+                    backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -79,10 +81,9 @@ class _D01PageUiState extends State<D01PageUi> {
                   },
                   // ignore: sort_child_properties_last
                   child: Text(
-                    'Sign up',
+                    'Register',
                     style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                   style: OutlinedButton.styleFrom(
@@ -90,7 +91,7 @@ class _D01PageUiState extends State<D01PageUi> {
                       250.0,
                       50.0,
                     ),
-                    backgroundColor: const Color.fromARGB(255, 16, 198, 16),
+                    backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5.0),
                     ),
@@ -103,7 +104,7 @@ class _D01PageUiState extends State<D01PageUi> {
                     'Continoue as a guest',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
+                      color: const Color.fromARGB(255, 34, 162, 173),
                     ),
                   ),
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_ui_app/views/d02_page_ui.dart';
 
 class D07PageUi extends StatefulWidget {
   const D07PageUi({super.key});
@@ -25,13 +26,19 @@ class _D07PageUiState extends State<D07PageUi> {
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    size: MediaQuery.of(context).size.height * 0.045,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200], // สีพื้นหลังกรอบ
+                    borderRadius: BorderRadius.circular(12), // กรอบมน ๆ
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: MediaQuery.of(context).size.height * 0.025,
+                    ),
                   ),
                 ),
               ),
@@ -52,19 +59,19 @@ class _D07PageUiState extends State<D07PageUi> {
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
+                  height: MediaQuery.of(context).size.height * 0.025,
                 ),
                 TextField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Username',
@@ -74,19 +81,19 @@ class _D07PageUiState extends State<D07PageUi> {
                   ),
                 ),
                   SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
+                  height: MediaQuery.of(context).size.height * 0.025,
                 ),
                   TextField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Email ',
@@ -96,19 +103,19 @@ class _D07PageUiState extends State<D07PageUi> {
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
+                  height: MediaQuery.of(context).size.height * 0.025,
                 ),
                 TextField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Password',
@@ -118,19 +125,19 @@ class _D07PageUiState extends State<D07PageUi> {
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
+                  height: MediaQuery.of(context).size.height * 0.025,
                 ),
                 TextField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Confirm password',
@@ -140,10 +147,7 @@ class _D07PageUiState extends State<D07PageUi> {
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.015,
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
+                  height: MediaQuery.of(context).size.height * 0.025,
                 ),
                 Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -153,7 +157,7 @@ class _D07PageUiState extends State<D07PageUi> {
                   
                   // ignore: sort_child_properties_last
                   child: Text(
-                    'Sing in',
+                    'Register',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -164,7 +168,7 @@ class _D07PageUiState extends State<D07PageUi> {
                       250.0,
                       50.0,
                     ),
-                    backgroundColor: const Color.fromARGB(255, 230, 154, 41),
+                    backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                         5.0,
@@ -180,65 +184,105 @@ class _D07PageUiState extends State<D07PageUi> {
               Text(
                 "Or Register with",
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.025,
+              ),
               Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
-                    child: Image.asset(
-                  'assets/images/imga2.png',
-                ),
-              ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width* 0.035,
-              ),
-              OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
-                    child: Image.asset(
-                  'assets/images/imga3.png',
-                ),
-              ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width* 0.002,
-              ),
-              OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
-                    child: Image.asset(
-                  'assets/images/imga4.png', 
-                ),
-              ),
-              ),
-              ],
-              ),
-              Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OutlinedButton(
                     onPressed: () {},
-                    child: Text(
-                      "Login Now",
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.grey), // กำหนดสีกรอบ
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12), // กำหนดความมนของมุม
+                      ),
+                    ),
+                  child: Center(
+                child: Image.asset(
+              'assets/images/imgc4.png',
+              height: 30,
+              width: 30,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.035,
+        ),
+        OutlinedButton(
+          onPressed: () {},
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(color: Colors.grey), // กำหนดสีกรอบ
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12), // กำหนดความมนของมุม
+            ),
+          ),
+          child: Center(
+            child: Image.asset(
+            'assets/images/imga2.png',
+            height: 25,
+            width: 25,
+          ),
+        ),
+      ),
+      SizedBox(
+        width: MediaQuery.of(context).size.width * 0.035,
+      ),
+      OutlinedButton(
+        onPressed: () {},
+        style: OutlinedButton.styleFrom(
+          side: BorderSide(color: Colors.grey), // กำหนดสีกรอบ
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12), // กำหนดความมนของมุม
+          ),
+        ),
+        child: Center(
+          child: Image.asset(
+            'assets/images/imga4.png',
+            height: 30,
+            width: 30,
+          ),
+        ),
+      ),
+    ],
+  ),
+             SizedBox(
+                height: MediaQuery.of(context).size.height * 0.025,
+              ),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Already have an account? ",
                       style: TextStyle(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.black, 
+                        fontSize: 16,
+                      ),
+                    ),
+                    WidgetSpan(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                            builder: (context) => D02PageUi(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "  Login Now",
+                        style: TextStyle(
+                        color: const Color.fromARGB(255, 34, 162, 173),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline, // ขีดเส้นใต้เหมือนลิงก์
                       ),
                     ),
                   ),
                 ),
+              ],
+            ),
+            ),
                 ],
               ),
           ),

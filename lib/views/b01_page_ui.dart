@@ -101,80 +101,78 @@ class _B01PageUiState extends State<B01PageUi> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.06,
               ),
-              Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton(
-                  onPressed: () {
-                    //เปิดหน้าจอแบบย้อนกลับได้
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => B02PageUi(),
-                      ),
-                    );
-                  },
-                  // ignore: sort_child_properties_last
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+              const SizedBox(height: 40),
+
+                // กล่องปุ่ม
+                Container(
+                  width: double.infinity,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(9),
+                    color: Colors.grey[300], // พื้นหลังของกล่อง
                   ),
-                  style: OutlinedButton.styleFrom(
-                    fixedSize: Size(
-                      125.0,
-                      50.0,
-                    ),
-                    backgroundColor: const Color.fromARGB(255, 10, 51, 173),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        5.0,
+                  child: Row(
+                    children: [
+                      // ปุ่ม Sign In (สีชมพู)
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const B02PageUi()),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color.fromARGB(255, 10, 51, 173),
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(9),
+                                bottomLeft: Radius.circular(9),
+                              ),
+                            ),
+                            fixedSize: Size(30, 30)
+                          ),
+                          child: const Text(
+                            'Login',
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                height: MediaQuery.of(context).size.height * 0.06,
-              ),
-                ElevatedButton(
-                  onPressed: () {
-                    //เปิดหน้าจอแบบย้อนกลับได้
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => B03PageUi(),
+
+                      // ปุ่ม Register (สีเทา)
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const B03PageUi()),
+                            );
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(9),
+                                bottomRight: Radius.circular(9),
+                          
+                              ),
+                            ),
+                            fixedSize: Size(30, 30)
+                          ),
+                          child: const Text(
+                            'Register',
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                          ),
+                        ),
                       ),
-                    );
-                  },
-                  // ignore: sort_child_properties_last
-                  child: Text(
-                    'Register',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: const Color.fromARGB(255, 103, 103, 103),
-                    ),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: Size(
-                      125.0,
-                      50.0,
-                    ),
-                    backgroundColor: Colors.grey,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        5.0,
-                      ),
-                    ),
+                    ],
                   ),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        
       ),
-    ),
     );
   }
 }

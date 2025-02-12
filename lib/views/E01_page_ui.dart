@@ -50,7 +50,7 @@ class _E01PageUiState extends State<E01PageUi> {
                     ),
                   ),
                   SizedBox(
-                height: MediaQuery.of(context).size.height * 0.035,
+                height: MediaQuery.of(context).size.height * 0,
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,  
@@ -86,43 +86,47 @@ class _E01PageUiState extends State<E01PageUi> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.045,
+                height: MediaQuery.of(context).size.height * 0.065,
               ),
               Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {
-                    //เปิดหน้าจอแบบย้อนกลับได้
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => E02PageUi(),
-                      ),
-                    );
-                  },
-                  
-                  // ignore: sort_child_properties_last
-                  child: Text(
-                    'Sing in',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  style: OutlinedButton.styleFrom(
-                    fixedSize: Size(
-                      250.0,
-                      50.0,
-                    ),
-                    backgroundColor: const Color.fromARGB(255, 230, 154, 41),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(
-                        5.0,
-                      ),
-                    ),
-                  ),
-                ),
+  onPressed: () {
+    // เปิดหน้าจอแบบย้อนกลับได้
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => E02PageUi(),
+      ),
+    );
+  },
+  style: OutlinedButton.styleFrom(
+    fixedSize: Size(250.0, 50.0),
+    backgroundColor: const Color.fromARGB(255, 230, 154, 41),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(5.0),
+    ),
+  ),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.start, // จัดข้อความไปทางซ้าย
+    children: [
+      Text(
+        'Explore Now',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+      ),
+      SizedBox(width: 90), // เพิ่มระยะห่างระหว่างข้อความกับไอคอน
+      Icon(
+        Icons.arrow_forward_ios,
+        color: Colors.white,
+        size: 18, // กำหนดขนาดไอคอน
+      ),
+    ],
+  ),
+),
             ],
           ),
                 ],

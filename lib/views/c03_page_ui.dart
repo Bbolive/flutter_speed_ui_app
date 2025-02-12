@@ -28,14 +28,28 @@ class _C03PageUiState extends State<C03PageUi> {
               ),
                 Align(
                 alignment: Alignment.centerRight,
-                child: Image.asset(
-                  'assets/images/imgc2.png',
-                  fit: BoxFit.cover,
-                  width: MediaQuery.of(context).size.width * 0.07,
+                child: Container(
+                 width: MediaQuery.of(context).size.width * 0.15, // ขนาดของรูป
+                  padding: EdgeInsets.all(5), // ระยะห่างขอบ
+                  decoration: BoxDecoration(
+                    color: Colors.white, // พื้นหลังของกรอบ
+                    borderRadius: BorderRadius.circular(15), // มุมโค้งของกรอบ
+                    border: Border.all(
+                      color: const Color.fromARGB(255, 16, 198, 16), // สีกรอบ
+                      width: 3, // ความหนาของกรอบ
+                    ),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(10), // ให้รูปภาพตัดมุมโค้งตามกรอบ
+                    child: Image.asset(
+                    'assets/images/imgc2.png',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.015,
+            ),
+            SizedBox(
+                height: MediaQuery.of(context).size.height * 0.045,
               ),
                Align(
                 alignment: Alignment.centerLeft,
@@ -61,7 +75,7 @@ class _C03PageUiState extends State<C03PageUi> {
                   child: Text(
                     "Name",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.grey,
                       fontSize: 14,
                     ),
                   ),
@@ -75,12 +89,12 @@ class _C03PageUiState extends State<C03PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                   ),
@@ -95,7 +109,7 @@ class _C03PageUiState extends State<C03PageUi> {
                   child: Text(
                     "Email",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.grey,
                       fontSize: 14,
                     ),
                   ),
@@ -109,12 +123,12 @@ class _C03PageUiState extends State<C03PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                   ),
@@ -129,7 +143,7 @@ class _C03PageUiState extends State<C03PageUi> {
                   child: Text(
                     "Password",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.grey,
                       fontSize: 14,
                     ),
                   ),
@@ -143,12 +157,12 @@ class _C03PageUiState extends State<C03PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                   ),
@@ -163,7 +177,7 @@ class _C03PageUiState extends State<C03PageUi> {
                   child: Text(
                     "Confirm Password",
                     style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.grey,
                       fontSize: 14,
                     ),
                   ),
@@ -177,12 +191,12 @@ class _C03PageUiState extends State<C03PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                   ),
@@ -191,30 +205,54 @@ class _C03PageUiState extends State<C03PageUi> {
                   height: MediaQuery.of(context).size.height * 0.002,
                 ),
                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Checkbox(
-                        onChanged: (paramValue) {
-                          setState(() {
-                            isTip = paramValue!;
-                          });
-                        },
-                        value: isTip,
-                        activeColor: Colors.purple,
-                        checkColor: Colors.white,
-                        focusColor: Colors.purple,
-                        side: BorderSide(
-                          color: Colors.purple,
-                        ),
-                      ),
-                      Text(
-                        'ให้ทิปพนักงานเสริฟ์',
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.002,
+  mainAxisAlignment: MainAxisAlignment.start, // ชิดซ้าย
+  children: [
+    Checkbox(
+      onChanged: (paramValue) {
+        setState(() {
+          isTip = paramValue!;
+        });
+      },
+      value: isTip,
+      activeColor: const Color.fromARGB(255, 16, 198, 16),
+      checkColor: Colors.white,
+      focusColor: const Color.fromARGB(255, 16, 198, 16),
+      side: BorderSide(
+        color: const Color.fromARGB(255, 16, 198, 16),
+      ),
+    ),
+    RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(
+            text: "I understand ",
+            style: TextStyle(
+              color: Colors.black, 
+              fontSize: 16,
+            ),
+          ),
+          WidgetSpan(
+            child: GestureDetector(
+              onTap: () {},
+              child: Text(
+                "the terms & policy.",
+                style: TextStyle(
+                  color: const Color.fromARGB(255, 16, 198, 16), // สีข้อความลิงก์
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.underline, // ขีดเส้นใต้เหมือนลิงก์
                 ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+  ],
+),
+SizedBox(
+  height: MediaQuery.of(context).size.height * 0.015,
+),
                 Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -245,85 +283,111 @@ class _C03PageUiState extends State<C03PageUi> {
             ],
           ),
            SizedBox(
-                height: MediaQuery.of(context).size.height * 0.004,
+                height: MediaQuery.of(context).size.height * 0.015,
               ),
               Text(
                 "Or Sing up With",
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.004,
+                height: MediaQuery.of(context).size.height * 0.015,
               ),
               Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
-                    child: Image.asset(
-                  'assets/images/imga3.png',
-                ),
-              ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width* 0.002,
-              ),
-              OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
-                    child: Image.asset(
-                  'assets/images/imga2.png',
-                ),
-              ),
-              ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width* 0.002,
-              ),
-              OutlinedButton(
-                  onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    shape: CircleBorder(),
-                  ),
-                  // ignore: sort_child_properties_last
-                  child: Center(
-                    child: Image.asset(
-                  'assets/images/imga4.png', 
-                ),
-              ),
-              ),
-              ],
-              ),
-               SizedBox(
-                width: MediaQuery.of(context).size.width* 0.002,
-              ),
-              Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => C02PageUi(),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OutlinedButton(
+                    onPressed: () {},
+                    style: OutlinedButton.styleFrom(
+                      side: BorderSide(color: Colors.grey), // กำหนดสีกรอบ
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12), // กำหนดความมนของมุม
                       ),
-                    );
-                    },
-                    child: Text(
-                      "SING IN",
+                    ),
+                  child: Center(
+                child: Image.asset(
+              'assets/images/imga2.png',
+              height: 30,
+              width: 30,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.035,
+        ),
+        OutlinedButton(
+          onPressed: () {},
+          style: OutlinedButton.styleFrom(
+            side: BorderSide(color: Colors.grey), // กำหนดสีกรอบ
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12), // กำหนดความมนของมุม
+            ),
+          ),
+          child: Center(
+            child: Image.asset(
+            'assets/images/imgc4.png',
+            height: 25,
+            width: 25,
+          ),
+        ),
+      ),
+      SizedBox(
+        width: MediaQuery.of(context).size.width * 0.035,
+      ),
+      OutlinedButton(
+        onPressed: () {},
+        style: OutlinedButton.styleFrom(
+          side: BorderSide(color: Colors.grey), // กำหนดสีกรอบ
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12), // กำหนดความมนของมุม
+          ),
+        ),
+        child: Center(
+          child: Image.asset(
+            'assets/images/imgc5.png',
+            height: 30,
+            width: 30,
+          ),
+        ),
+      ),
+    ],
+  ),
+               SizedBox(
+                width: MediaQuery.of(context).size.width* 0.015,
+              ),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Have an account? ",
                       style: TextStyle(
+                        color: Colors.black, 
                         fontSize: 16,
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                      ),
+                    ),
+                    WidgetSpan(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                            builder: (context) => C02PageUi(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "SING IN",
+                        style: TextStyle(
+                        color: const Color.fromARGB(255, 16, 198, 16), // สีข้อความลิงก์
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline, // ขีดเส้นใต้เหมือนลิงก์
                       ),
                     ),
                   ),
                 ),
               ],
+            ),
+            ),
+            ],
             ),
           ),
         ),

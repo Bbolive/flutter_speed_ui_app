@@ -26,13 +26,19 @@ class _D03PageUiState extends State<D03PageUi> {
               ),
               Align(
                 alignment: Alignment.centerLeft,
-                child: IconButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    size: MediaQuery.of(context).size.height * 0.045,
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200], // สีพื้นหลังกรอบ
+                    borderRadius: BorderRadius.circular(12), // กรอบมน ๆ
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: MediaQuery.of(context).size.height * 0.025,
+                    ),
                   ),
                 ),
               ),
@@ -63,7 +69,7 @@ class _D03PageUiState extends State<D03PageUi> {
                       "Daon't worry! it occurs. Please enter the email\naddress likend with your account.",
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.black,
+                        color: Colors.grey,
                       ),
                     ),
                   ),
@@ -76,12 +82,12 @@ class _D03PageUiState extends State<D03PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Enter your email',
@@ -132,20 +138,42 @@ class _D03PageUiState extends State<D03PageUi> {
             ],
           ),
           SizedBox(
-                  height: 20,
-                ),
-          Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Login Now",
+                height: MediaQuery.of(context).size.height * 0.55,
+              ),
+              RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: "Remember Password? ",
                       style: TextStyle(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.black, 
+                        fontSize: 16,
+                      ),
+                    ),
+                    WidgetSpan(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                            builder: (context) => D04PageUi(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "  Login ",
+                        style: TextStyle(
+                        color: const Color.fromARGB(255, 34, 162, 173),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline, // ขีดเส้นใต้เหมือนลิงก์
                       ),
                     ),
                   ),
                 ),
+              ],
+            ),
+            ),
               ],
             ),
           ),

@@ -17,28 +17,30 @@ class _E02PageUiState extends State<E02PageUi> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Padding(
-        padding: EdgeInsets.only(
-          left: 35.0,
-          right: 35.0,
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: 12,
+      body: Stack(
+        children: [
+          Positioned(
+            top: 20,
+            left: 20,
+            right: 20,
+            child: SizedBox(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 0.35,
+              child: Image.asset(
+                'assets/images/imge2.png',
+                fit: BoxFit.cover,
+              
+              ),
+            ),
           ),
-          child: Center(
+
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 35.0),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
-                ),
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    'assets/images/imge2.png',
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                const SizedBox(height: 250), 
+
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.025,
                 ),
@@ -81,12 +83,12 @@ class _E02PageUiState extends State<E02PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Email ',
@@ -103,12 +105,12 @@ class _E02PageUiState extends State<E02PageUi> {
                   decoration: InputDecoration(
                     enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                        color: const Color.fromARGB(255, 10, 51, 173),
+                        color: Colors.grey,
                       ),
                     ),
                     hintText: 'Password',
@@ -126,56 +128,52 @@ class _E02PageUiState extends State<E02PageUi> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
-                ),
-                 Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => E03PageUi(),
-                      ),
-                    );
-                    },
-                    child: Text(
-                      "Forgot Your Password?",
-                      style: TextStyle(
-                        color: const Color.fromARGB(255, 10, 51, 173),
-                      ),
-                    ),
-                  ),
-                ),
+                
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.005,
                 ),
                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Checkbox(
-                        onChanged: (paramValue) {
-                          setState(() {
-                            isTip = paramValue!;
-                          });
-                        },
-                        value: isTip,
-                        activeColor: Colors.purple,
-                        checkColor: Colors.white,
-                        focusColor: Colors.purple,
-                        side: BorderSide(
-                          color: Colors.purple,
-                        ),
-                      ),
-                      Text(
-                        'ให้ทิปพนักงานเสริฟ์',
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
-                ),
+  mainAxisAlignment: MainAxisAlignment.spaceBetween, // ให้ข้อความอยู่สุดขอบซ้ายและขวา
+  children: [
+    Row(
+      children: [
+        Checkbox(
+          onChanged: (paramValue) {
+            setState(() {
+              isTip = paramValue!;
+            });
+          },
+          value: isTip,
+          activeColor: Colors.grey,
+          checkColor: Colors.white,
+          focusColor: Colors.grey,
+          side: BorderSide(
+            color: Colors.grey,
+          ),
+        ),
+        Text(
+          'Remember me',
+        ),
+      ],
+    ),
+    TextButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => E03PageUi(),
+          ),
+        );
+      },
+      child: Text(
+        "Forgot Password?",
+        style: TextStyle(
+          color: const Color.fromARGB(255, 230, 154, 41),
+        ),
+      ),
+    ),
+  ],
+),
                 Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -206,10 +204,13 @@ class _E02PageUiState extends State<E02PageUi> {
             ],
           ),
            SizedBox(
-                height: MediaQuery.of(context).size.height * 0.005,
+                height: MediaQuery.of(context).size.height * 0.035,
               ),
               Text(
-                "Or Sing up With",
+                "OR",
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.035,
               ),
               Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -218,6 +219,7 @@ class _E02PageUiState extends State<E02PageUi> {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                     shape: CircleBorder(),
+                    iconColor: Colors.white
                   ),
                   // ignore: sort_child_properties_last
                   child: Center(
@@ -259,34 +261,49 @@ class _E02PageUiState extends State<E02PageUi> {
               ],
               ),
               SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.005,
+                height: MediaQuery.of(context).size.height * 0.035,
+              ),
+                 RichText(
+    text: TextSpan(
+      children: [
+        TextSpan(
+          text: "Don\'t have an account?",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 16,
+          ),
+        ),
+        WidgetSpan(
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => E04PageUi(),
                 ),
-                 Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => E04PageUi(),
-                      ),
-                    );
-                    },
-                    child: Text(
-                      "Create Account",
-                      style: TextStyle(
-                        color: const Color.fromARGB(255, 10, 51, 173),
-                      ),
-                    ),
-                  ),
-                ),
+              );
+            },
+            child: Text(
+              "  Create Account",
+              style: TextStyle(
+                color: const Color.fromARGB(255, 230, 154, 41),
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.underline, // ขีดเส้นใต้เหมือนลิงก์
+              ),
+            ),
+          ),
+        ),
+      ],
+      ),
+      ),
                 ],
               ),
             ],
           ),
                 ),
-        ),
-    ),
+        ],
+      ),
     );
   }
 }

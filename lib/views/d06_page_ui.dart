@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_ui_app/views/d02_page_ui.dart';
 
 class D06PageUi extends StatefulWidget {
   const D06PageUi({super.key});
@@ -50,6 +51,7 @@ class _D06PageUiState extends State<D06PageUi> {
                   'You password has been changed',
                   style: TextStyle(
                     fontSize: MediaQuery.of(context).size.height * 0.017,
+                    color: Colors.grey,
                   ),
                 ),
               ),
@@ -69,7 +71,14 @@ class _D06PageUiState extends State<D06PageUi> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => D02PageUi(),
+                      ),
+                    );
+                  },
                   
                   // ignore: sort_child_properties_last
                   child: Text(
